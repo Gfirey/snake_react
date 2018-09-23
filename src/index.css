@@ -1,0 +1,87 @@
+.snake-app {
+    display: flex;
+    flex-direction: row;
+    max-width: 500px;
+}
+
+.snake-board {
+    border: 1px dashed #999;
+    display: flex;
+    margin: 25px;
+    width: 250px;
+    height: 250px;
+    position: relative;
+}
+
+.snake-controls {
+    display: flex;
+    flex-shrink: 1;
+    flex-grow: 1;
+    align-self: center;
+}
+
+.snake-control_button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
+    border: 1px solid #ccc;
+    font-size: 22px;
+    flex-wrap: wrap;
+}
+
+.snake-right_btn,
+.snake-left_btn {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.snake-center_btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: flex-start;
+}
+
+.snake-head {
+    height: 25px;
+    width: 25px;
+    background-color: forestgreen;
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    z-index: 2;
+}
+
+.snake-tail {
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    background-color: limegreen;
+}
+
+.snake-tail__waiting {
+    z-index: 1;
+    background-color: yellow;
+    animation: blinker 2s linear infinite;
+}
+
+.snake-bonus {
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    background-color: mediumpurple;
+    animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
