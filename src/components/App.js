@@ -19,16 +19,35 @@ class App extends Component {
       )
    }
 
+   componentDidMount() {
+      window.addEventListener('keydown', this.handleKeyDown);
+   }
+
+   componentWillUnmount() {
+      window.removeEventListener('keydown', this.handleKeyDown);
+   }
+
    clickOnArrow = (direction) => {
       this.setState(state => ({
          direction: direction
       }));
-   }
+   };
 
-   handleKeyPress = (event) => {
-      console.log(event.key)
+   handleKeyDown = (event) => {
+      let newDirection;
+      switch (event.keyCode) {
+         case 37: newDirection = 'left'; break;
+         case 38: newDirection = 'top'; break;
+         case 39: newDirection = 'right'; break;
+         case 40: newDirection = 'bottom'; break;
+         default: newDirection = this.state.direction; break;
+      }
+      if (newDirection !== this.state.direction) {
+         this.setState(state => ({
+            direction: newDirection
+         }))
+      }
    }
-
 }
 
 export default App;

@@ -112,7 +112,7 @@ class Snake extends Component {
             tailTop: this.state.headTop,
             direction: direction,
             nextDirection: direction,
-            isNextTurn: direction !== direction,
+            isNextTurn: false,
             key: key,
             delay: key + 1,
             prevTail: prevTail,
